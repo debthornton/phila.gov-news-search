@@ -1,0 +1,16 @@
+// flex layouts
+@mixin flex-center($j-content: space-evenly, $direction: null) {
+    display: flex;
+    align-items: center;
+    flex-direction: $direction;
+    justify-content: $j-content;
+}
+
+@mixin fullscreen-flex($j-content: flex-start, $direction: column) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $j-content;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}

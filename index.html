@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Phila.gov News Search</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+            <h1 tabindex=1>phila.gov Article Search</h1>
+        </header>
+
+        <section>
+            <form id='search-form'>
+                <input type='text' placeholder='Search by title' tabindex=2></input>
+                <button type='submit' tabindex=3>Search</button>
+            </form>
+        </section>
+
+        <main>
+            <div id='results'>
+                <div id='results-header'>
+                    <div id='header-title-placeholder'>
+                        <p tabindex=4>Title</p>
+                    </div>
+                    <div id='header-publish-date-placeholder'>
+                        <p tabindex=5>Publish Date</p>
+                    </div>
+                </div>
+                <ul id='results-list'></ul>
+            </div>
+        </main>
+        
+        <script src="app/main.min.js" async defer></script>
+    </body>
+</html>

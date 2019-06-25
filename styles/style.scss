@@ -1,0 +1,151 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+
+body {
+    @include fullscreen-flex();
+    background: $background-color;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    @include flex-center(center);
+    height: 100px;
+    margin-bottom: 15vh;
+    width: 100%;
+    background: $accent-color;
+    color: $background-color;
+    font-weight: 800;
+
+    h1 {
+        font-size: 2.5em;
+        text-align: center;
+
+        @media screen and (max-width: 780px){
+            font-size: 2em;
+        }
+    }
+}
+
+section {
+    margin-bottom: 10vh;
+    width: calc(100% - 20vw);
+
+    @media screen and (max-width: 780px){
+        width: 100%;
+    }
+    
+    @include flex-center(center);
+    
+    form {
+        width: 100%;
+        @include flex-center(center);
+
+        input,
+        button {
+            border: 1px solid rgba(187, 180, 180, 0.808);
+            border-radius: 5px;
+            height: 50px;
+            padding: 5px;
+            font-size: 1em;
+        }
+
+        input {
+            width: 70%;
+            margin: 0 10px;
+            height: 50px;
+            font-size: 1.1em;
+            padding-left: 12px;
+            color: $main-color;
+
+            @media screen and (max-width: 780px){
+                width: 100%;
+            }
+        }
+
+        button {           
+            width: 80px;
+            color: $main-color;                   
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+            &:hover {
+                background: $accent-color;
+                color: $hover-text-color;
+            }
+        }
+    }
+}
+
+main {
+    @extend section;
+
+    #results {
+        width: 80%;
+        font-weight: 700;
+        color: $main-color;
+
+        @media screen and (max-width: 780px){
+            width: 100%;
+        }
+
+        #results-header {
+            @include flex-center(space-between, row);          
+            text-transform: uppercase;
+            font-size: 1.2em;
+            font-weight: 800;
+            border-bottom: 5px solid $main-color;
+            padding: 0 40px 15px 18px;
+
+            @media screen and (max-width: 780px){
+                padding: 0 20px 15px 18px;
+            }
+        }
+
+        #results-list {
+            @include flex-center(center, column);
+            width: 100%;
+
+            li {
+                animation: fade-in 0.7s ease forwards;
+                @include flex-center(space-between, row);
+                border-top: 1px solid $main-color;
+                padding: 35px 45px 25px 15px;
+                font-size: 1.2em;
+                width: 100%;
+                
+                @media screen and (max-width: 780px){
+                    padding: 35px 25px 25px 15px;
+                }
+
+                p {
+                    transition: color 0.3s ease;
+                    &:hover {
+                        color: $accent-color;
+                    }
+                }
+
+                div {    
+                    font-weight: 300;
+                    width: 300px;
+                    text-align: center;
+                    @include flex-center(flex-end, row);
+                }
+            }
+
+            li:nth-of-type(1) {
+                border-top: none;
+            }
+        }
+    }
+}
